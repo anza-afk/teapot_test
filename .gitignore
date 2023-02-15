@@ -45,3 +45,6 @@ venv.bak/
 
 #logs
 *.log
+
+#sqlite db
+*.db
