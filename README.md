@@ -1,3 +1,4 @@
 "# teapot_test" 
-Запуск: python app.py
-Выключать чайник клавишей Enter
+* После клонирования устанавливаем зависимости: __pip install -r requirements.txt__
+* Запуск: __python app.py__
+* Выключать чайник __клавишей Enter__
