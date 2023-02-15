@@ -11,6 +11,7 @@ formatter = logging.Formatter(
     '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
+# создание класса хендлера в БД SQLite для логгера
 class SQLiteHandler(logging.Handler):
     def __init__(self, file):
         super().__init__()
@@ -20,7 +21,7 @@ class SQLiteHandler(logging.Handler):
             'level TEXT, message TEXT)')
 
     def emit(self, message):
-        # record.message is the log message
+        # Записываем сообщение в БД
         date_time = datetime.now()
         self.db.execute(
             'INSERT INTO logs(datetime, name, level, message)'
