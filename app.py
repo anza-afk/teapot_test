@@ -11,7 +11,7 @@ stop_temperature = int(config['Teapot']['stop_temperature'])
 
 
 if __name__ == "__main__":
-    # Создание инстанса чайника с импортированными настройками
+    # Создание экземпляра чайника с импортированными настройками
     My_Teapot = Teapot(
         max_amount_of_water=max_amount_of_water,
         boil_time=boil_time,

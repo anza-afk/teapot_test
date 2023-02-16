@@ -1,5 +1,5 @@
 import time
-from keyboard_methods import getwch, kbhit
+from key_methods import KBHit
 from logger import logger
 
 
@@ -38,11 +38,15 @@ class Teapot():
         или нажатия клавиши Enter на клавиатуре."""
         self.is_on = True
         logger.info('Чайник включен.')
+
+        # Создание экземпляра класса KBHit
+        kb = KBHit()
+
         for _ in range(self.boil_time):
 
             # Проверка нажатия клавиши Enter
-            if kbhit():
-                if getwch() == '\r':
+            if kb.kbhit():
+                if ord(kb.getwch()) in (10, 13):
                     break
 
             time.sleep(1)
