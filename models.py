@@ -1,5 +1,5 @@
 import time
-from key_methods import KBHit
+from keyboard_logic import KBHit
 from logger import logger
 
 
