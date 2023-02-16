@@ -1,6 +1,7 @@
 import time
 from keyboard_logic import KBHit
 from logger import logger
+from decimal import Decimal
 
 
 class Teapot():
@@ -50,7 +51,8 @@ class Teapot():
                     break
 
             time.sleep(1)
-            self.temperature += 10
+            self.temperature += round(Decimal(100/self.boil_time), 1)
+            self.temperature = 100 if self.temperature > 100 else self.temperature
             logger.info(self.temperature)
 
             # Проверка установленной температуры для выключения чайника
@@ -58,7 +60,7 @@ class Teapot():
                 break
 
         # Проверка кипения
-        if self.temperature == 100:
+        if self.temperature >= 100:
             logger.info(f'Вода в чайнике вскипела ({self.amount_of_water}л.)')
         return self.turn_off()
 
